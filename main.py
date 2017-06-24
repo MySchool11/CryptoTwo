@@ -30,21 +30,23 @@ print ("which is calculated using his secret number, the shared base and the sha
 print ("\nThis is where the term \"asymmetric\" comes from, as both transmissions are different")
 
 print ("\nPrivately calculated shared secret:")
-print ("Now, Alice uses her secret, the number Bob just sent her and the public key to create another number")
+print ("Now, Alice uses her secret with the number Bob just sent her and the public key to create another number")
 alice_shared_secret = (bob_send ** alice_secret) %  shared_prime            # output alice's shard secret
 print ("Alice shared secret: ", alice_shared_secret)
 print ("Bob does the same but with the number Alice sent him")
 bob_shared_secret = (alice_send ** bob_secret) % shared_prime               # output bob's shared secret
 print ("Bob shared secret: ", bob_shared_secret)
 
-print ("\nAll being well, both Alice and Bob now have the same shared secret which can be used")
-print ("to decrypt the data in combination with their own keys and the public key")
-
 if alice_shared_secret == bob_shared_secret:                                # check that alice and bob's shared secrets do in fact match
     print("\nThe shared secrets match, communication is encrypted securely")  # if equal, confirm  all is well
 else:                                                                       # if they are unequal, warn user
     print("\nSomething is wrong there is a secret mismatch, communication is not securely encrypted")
-    exit(1)                                                                 # give error code upon exit
+    exit(1)
+
+print ("\nAll being well, both Alice and Bob now have the same shared secret which can be used")
+print ("to decrypt the data in combination with their own keys and the public key")
+
+                                                              # give error code upon exit
 
 exit_string = input("\nPress enter to exit...")
 
