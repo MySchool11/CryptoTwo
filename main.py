@@ -21,6 +21,10 @@ def print_arrows(output_string): # function to print symbols in increasing amoun
     print("\n")
 
 
+pause_time = 7  # sets the number of seconds for each pause to read the text
+internet_transfer_animation = "---->" # sets the string used for the Internet transfer 'animation'
+calculating_equal_shared = "*-*" # sets the string used for the shared secret comparison 'animation'
+
 print("Diffie-Hellman encryption\n")
 
 shared_prime = get_primes(1000)  # retrieves a random prime between 2 and 1000 and place is into "shared_prime"
@@ -42,15 +46,15 @@ next_bit = input("\nPress enter to continue...")
 print("\nAlice and Bob now both choose a private number which is totally secret")
 print("this number can be any number and does not have to be a prime or other special number")
 
-sleep(7)
+sleep(pause_time)
 
 alice_send = (shared_base ** alice_secret) % shared_prime  # calculate the value that alice will send to bob
 print("\nAlice sends over the public channel (Internet): ", alice_send)
 print("which is calculated using her secret number, the shared base and the shared key\n")
 
-sleep(7)
+sleep(pause_time)
 
-print_arrows("---->")
+print_arrows(internet_transfer_animation)
 
 next_bit = input("\npress enter to continue or press 'a' then enter to see the maths in detail...")
 if next_bit == "a":
@@ -65,9 +69,9 @@ bob_send = (shared_base ** bob_secret) % shared_prime  # calculate the value tha
 print("\nBob sends over the public channel (Internet): ", bob_send)
 print("which is calculated using his secret number, the shared base and the shared key\n")
 
-sleep(7)
+sleep(pause_time)
 
-print_arrows("---->")
+print_arrows(internet_transfer_animation)
 
 next_bit = input("\npress enter to continue or press 'a' then enter to see the maths in detail...")
 if next_bit == "a":
@@ -80,7 +84,7 @@ if next_bit == "a":
 
 print("\nThis is where the term \"asymmetric\" comes from, as both transmissions are different\n")
 
-sleep(5)
+sleep(pause_time - 2)
 
 print("next, both Alice and bob privately calculate the shared secret\n")
 print("so, Alice uses her secret with the number Bob just sent her and the public key to create another number")
@@ -110,7 +114,7 @@ if next_bit == "a":
     next_bit = input("press enter to continue...")
 
 print("\ncheck that Alice's shared secret == Bob's shared secret\n")
-print_arrows("*-*")
+print_arrows(calculating_equal_shared)
 if alice_shared_secret == bob_shared_secret:  # check that alice and bob's shared secrets do in fact match
     print("\nThe shared secrets match, communication is encrypted securely")  # if equal, confirm  all is well
 else:  # if they are unequal, warn user
