@@ -42,9 +42,13 @@ next_bit = input("\nPress enter to continue...")
 print("\nAlice and Bob now both choose a private number which is totally secret")
 print("this number can be any number and does not have to be a prime or other special number")
 
+sleep(7)
+
 alice_send = (shared_base ** alice_secret) % shared_prime  # calculate the value that alice will send to bob
 print("\nAlice sends over the public channel (Internet): ", alice_send)
 print("which is calculated using her secret number, the shared base and the shared key\n")
+
+sleep(7)
 
 print_arrows("---->")
 
@@ -60,6 +64,8 @@ if next_bit == "a":
 bob_send = (shared_base ** bob_secret) % shared_prime  # calculate the value that bob will send to alice
 print("\nBob sends over the public channel (Internet): ", bob_send)
 print("which is calculated using his secret number, the shared base and the shared key\n")
+
+sleep(7)
 
 print_arrows("---->")
 
