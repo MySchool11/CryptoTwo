@@ -1,7 +1,7 @@
 __author__ = "Mr Bancroft"
 
 # PLEASE do not be put off by the apparent complexity of this code, you do not need to understand how it works, just
-# this information it is giving you when you run it!!!
+# the information it is giving you when you run it!!!
 
 from primitives import calculate_prime_primitives  # imports the function "primitives" which chooses a prime primitive for the "shared_base"
 from prime import get_primes  # imports the function "prime" which chooses a random prime from a list up to the passed value
