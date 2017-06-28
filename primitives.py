@@ -4,7 +4,7 @@ from random import sample
 
 def calculate_prime_primitives(prime):
     number_to_check = 0
-    print("Working...")                                                         # displays a message to the user as this process can take some time
+    print("Working out public key and public shared base...")                   # displays a message to the user as this process can take some time
     primitive_roots = []                                                        # declares a list "primitive_roots"
     for each in range(1, prime):                                                # loops from 1 until the "prime" value passed into the function
         number_to_check += 1                                                    # adds one to the "number_to_check" variable
